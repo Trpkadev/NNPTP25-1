@@ -53,7 +53,7 @@
                 ImaginaryPart = -other.ImaginaryPart
             };
 
-            var numerator = Multiply(conjugate);
+            var numerator = this * conjugate;
             double denominator = other.RealPart * other.RealPart + other.ImaginaryPart * other.ImaginaryPart;
 
             return new ComplexNumber {
