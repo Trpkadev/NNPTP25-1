@@ -113,10 +113,7 @@
             return stringBuilder.ToString();
 
 
-            bool IsNotLastTerm(int index)
-            {
-                return index + 1 < Coefficients.Count;
-            }
+            bool IsNotLastTerm(int index) => index + 1 < Coefficients.Count;
         }
     }
 }

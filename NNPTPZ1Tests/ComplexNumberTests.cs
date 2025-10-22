@@ -32,10 +32,7 @@
                 RealPart = 1,
                 ImaginaryPart = -1
             };
-            var zero = new ComplexNumber {
-                RealPart = 0,
-                ImaginaryPart = 0
-            };
+            var zero = ComplexNumber.Zero;
             var expected = new ComplexNumber {
                 RealPart = 1,
                 ImaginaryPart = -1
@@ -87,10 +84,10 @@
         public void Polynome_EvaluateAtZero_ReturnsConstantTerm()
         {
             var poly = CreatePolynomial(1, 0, 1);// 1 + 0x + 1x²
-            var x = new ComplexNumber { RealPart = 0, ImaginaryPart = 0 };
+            var zero = ComplexNumber.Zero;
             var expected = new ComplexNumber { RealPart = 1, ImaginaryPart = 0 };
 
-            var result = poly.Evaluate(x);
+            var result = poly.Evaluate(zero);
 
             Assert.AreEqual(expected, result);
         }
@@ -133,12 +130,10 @@
         {
             var poly = new Polynome();
             foreach (double coefficient in realCoefficients)
-            {
                 poly.Coefficients.Add(new ComplexNumber {
                     RealPart = coefficient,
                     ImaginaryPart = 0
                 });
-            }
             return poly;
         }
     }

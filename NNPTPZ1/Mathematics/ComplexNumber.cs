@@ -20,10 +20,7 @@
             return base.Equals(obj);
 
 
-            bool AreEqual(double a, double b)
-            {
-                return Math.Abs(a - b) < Tolerance;
-            }
+            bool AreEqual(double a, double b) => Math.Abs(a - b) < Tolerance;
         }
 
         public override int GetHashCode()

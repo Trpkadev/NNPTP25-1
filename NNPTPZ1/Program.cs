@@ -32,7 +32,7 @@
                 Console.WriteLine(polynome);
                 Console.WriteLine(derivedPolynome);
 
-                // for every pixel in image...
+                // for every pixel in the image...
                 for (int i = 0; i < arguments.SizeX; i++)
                     for (int j = 0; j < arguments.SizeY; j++)
                     {
@@ -93,13 +93,13 @@
 
         private static int FindOrAddRoot(ComplexNumber value, List<ComplexNumber> roots)
         {
-            for (int k = 0; k < roots.Count; k++)
+            for (int i = 0; i < roots.Count; i++)
             {
-                double distanceSquared = Math.Pow(value.RealPart - roots[k].RealPart, 2) +
-                                         Math.Pow(value.ImaginaryPart - roots[k].ImaginaryPart, 2);
+                double distanceSquared = Math.Pow(value.RealPart - roots[i].RealPart, 2) +
+                                         Math.Pow(value.ImaginaryPart - roots[i].ImaginaryPart, 2);
 
                 if (distanceSquared <= RootMatchThreshold)
-                    return k;
+                    return i;
             }
 
             roots.Add(value);
